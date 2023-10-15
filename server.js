@@ -33,8 +33,10 @@ app.use("/api/contactus", contactRoute);
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Home Page");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.send("API is running..");
 });
+
 
 // Error Middleware
 app.use(errorHandler);
