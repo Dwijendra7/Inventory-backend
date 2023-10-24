@@ -20,7 +20,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   cors({
+<<<<<<< HEAD
     origin: ["http://localhost:3000", "https://invent-app.vercel.app"],
+=======
+    origin: ["http://localhost:3000", "https://inventory-frontend-theta.vercel.app"],
+>>>>>>> 831358af5f582b078fe270d047c803636539d3a9
     credentials: true,
   })
 );
@@ -34,8 +38,10 @@ app.use("/api/contactus", contactRoute);
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Home Page");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.send("API is running..");
 });
+
 
 // Error Middleware
 app.use(errorHandler);
